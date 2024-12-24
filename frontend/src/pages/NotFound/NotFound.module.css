@@ -1,0 +1,9 @@
+.notFoundDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: brown;
+  font-weight: 500;
+  height: 40vw;
+}

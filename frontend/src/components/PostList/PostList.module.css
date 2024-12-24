@@ -1,0 +1,13 @@
+.postList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.postItem {
+  flex: 1 1 calc(33.33% - 20px);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}

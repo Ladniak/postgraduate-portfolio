@@ -1,0 +1,41 @@
+.divContainer {
+  height: 30vw;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  color: rgb(77, 77, 77);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.itemHeader {
+  border-bottom: 1px solid rgb(77, 77, 77);
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.par {
+  display: flex;
+  width: 185px;
+  justify-content: center;
+  font-size: 19px;
+  text-align: center;
+  color: rgb(77, 77, 77);
+}

@@ -1,0 +1,43 @@
+.backBody {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Додає статичність фону */
+  margin: 0;
+  padding: 0 65px;
+  height: 40vw;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.paragraph {
+  display: flex;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  width: 600px;
+}
+
+.btn {
+  display: flex;
+  width: 130px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  background: #000266;
+  color: white;
+}
+
+.btn:hover {
+  background: #000399;
+}

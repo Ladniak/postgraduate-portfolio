@@ -1,0 +1,76 @@
+.formDiv {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 20px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 350px;
+  height: 450px;
+}
+
+.image {
+  width: 300px;
+}
+
+.formHeader {
+  font-weight: 400;
+  font-size: 45px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.input {
+  width: 330px;
+  padding-bottom: 7px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: rgb(211, 219, 226);
+}
+
+.input {
+  outline: none;
+}
+
+.formButton {
+  display: flex;
+  width: 130px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  background: #000266;
+  color: white;
+}
+
+.formButton:hover {
+  background: #000399;
+}
+
+.error {
+  color: red;
+}
