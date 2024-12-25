@@ -1,4 +1,3 @@
-// redux/postsSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchPosts, fetchPostById } from "./operations";
 
@@ -14,7 +13,6 @@ const postsSlice = createSlice({
   initialState: INITIAL_STATE,
   extraReducers: (builder) => {
     builder
-      // Обробка fetchPosts
       .addCase(fetchPosts.pending, (state) => {
         state.items = [];
         state.loading = true;

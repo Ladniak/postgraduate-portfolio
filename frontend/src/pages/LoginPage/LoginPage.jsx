@@ -1,7 +1,13 @@
 import module from "./LoginPage.module.css"
 
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { fetchUsers } from "../../redux/users/operations";
+import { selectIsAuth } from "../../redux/users/slice";
+import { useEffect } from "react";
 
 const INITIAL_VALUES = {
     email: '',
@@ -18,11 +24,27 @@ const validationSchema = Yup.object({
 });
 
 const LoginPage = () => {
+    const isLoggedIn = useSelector(selectIsAuth);
+    const dispatch = useDispatch();
 
-    const handleSubmit = (values, actions) => {
-        console.log(values);
+    const handleSubmit = async (values, actions) => {
+        const data = await dispatch(fetchUsers(values));
+
+        if (!data.payload) {
+            return console.log('error');
+        }
+
+        if ('token' in data.payload) {
+            window.localStorage.setItem('token', data.payload.token);
+        }
         actions.resetForm();
     };
+
+    useEffect(() => { });
+
+    if (isLoggedIn) {
+        return <Navigate to="/" />
+    }
 
     return (
         <div className={module.formDiv}>

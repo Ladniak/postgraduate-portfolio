@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const authInstance = axios.create({
+export const authInstance = axios.create({
   baseURL: "http://localhost:3000",
 });
 

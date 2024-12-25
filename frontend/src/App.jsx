@@ -4,11 +4,18 @@ import LoginPage from './pages/LoginPage/LoginPage'
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage'
 import NotFound from './pages/NotFound/NotFound'
 import Layout from './components/Layout/Layout'
-import { Suspense } from 'react'
+import { Suspense, useEffect } from 'react'
 import UserPage from './pages/UserPage/UserPage'
 import PostPage from './pages/PostPage/PostPage'
+import { useDispatch } from 'react-redux'
+import { fetchAuthMe } from './redux/users/operations'
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAuthMe())
+  }, [dispatch])
 
   return (
     <Layout>

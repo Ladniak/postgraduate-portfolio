@@ -7,14 +7,12 @@ import module from "./PostList.module.css"
 const PostList = () => {
     const dispatch = useDispatch();
     const { items: posts, loading, error } = useSelector((state) => state.posts);
+    const userData = useSelector((state) => state.auth.data);
+
 
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
-
-    console.log("Loading:", loading);
-    console.log("Error:", error);
-    console.log("Posts:", posts);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
@@ -29,6 +27,7 @@ const PostList = () => {
                         <Post
                             key={obj._id}
                             post={obj}
+                            userData={userData?._id === obj.user._id}
                         />
                     ) : null}
                 </div>

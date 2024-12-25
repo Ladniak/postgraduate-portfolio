@@ -1,7 +1,12 @@
 import module from "./RegistrationPage.module.css"
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from 'yup';
+import { selectIsAuth } from "../../redux/users/slice";
+import { fetchRegister } from "../../redux/users/operations";
+import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
 const INITIAL_VALUES = {
     name: '',
@@ -22,11 +27,27 @@ const validationSchema = Yup.object({
 });
 
 const RegistrationPage = () => {
+    const isLoggedIn = useSelector(selectIsAuth);
+    const dispatch = useDispatch();
 
-    const handleSubmit = (values, actions) => {
-        console.log(values);
+    const handleSubmit = async (values, actions) => {
+        const data = await dispatch(fetchRegister(values));
+
+        if (!data.payload) {
+            return console.log('error');
+        }
+
+        if ('token' in data.payload) {
+            window.localStorage.setItem('token', data.payload.token);
+        }
         actions.resetForm();
     };
+
+    useEffect(() => { });
+
+    if (isLoggedIn) {
+        return <Navigate to="/" />
+    }
 
     return (
 
