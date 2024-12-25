@@ -28,11 +28,12 @@ const PostPage = () => {
     return (
         <div className={module.container}>
             <img src={imageUrl} className={module.image} alt="Post image" />
-            <div>
-                <h1>{post.title}</h1>
+            <div >
+                <h1 className={module.title}>{post.title}</h1>
                 <p><strong>Author:</strong> {post.user?.name || "Unknown"}</p>
                 <p><strong>Created at:</strong> {formattedDate || "Invalid Date"}</p>
                 <p><strong>Content:</strong> {post.text}</p>
+                <p><strong>Views:</strong> {post.viewsCount}</p>
             </div>
 
 

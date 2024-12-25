@@ -15,9 +15,9 @@ export const Navigation = () => {
             {isLoggedIn && (
                 <NavLink className={buildCssClasses} to="/new-post">Add Post</NavLink>
             )}
-            {isLoggedIn && (
+            {/* {isLoggedIn && (
                 <NavLink className={buildCssClasses} to="/my-posts">My Posts</NavLink>
-            )}
+            )} */}
         </div>
     );
 };
