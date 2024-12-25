@@ -4,7 +4,6 @@ import { authReducer } from "./users/slice";
 
 import {
   persistStore,
-  //   persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,18 +11,11 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-// import storage from "redux-persist/lib/storage";
-
-// const authConfig = {
-//   key: "authKey",
-//   storage,
-//   whitelist: ["token"], // blacklist: ["showProfilesList"]
-// };
 
 export const store = configureStore({
   reducer: {
     posts: postsReducer,
-    auth: authReducer, //(authConfig, authReducer),
+    auth: authReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

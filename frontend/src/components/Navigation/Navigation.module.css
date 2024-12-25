@@ -6,6 +6,14 @@
   font-weight: 700;
 }
 
+.link {
+  transition: 0.5s;
+}
+
+.link:hover {
+  color: #0003a5;
+}
+
 .active {
   color: #0003a5;
 }

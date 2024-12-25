@@ -18,20 +18,24 @@ const PostList = () => {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className={module.postList}>
-            {(loading ? [...Array(5)] : Array.isArray(posts) ? posts : []).map((obj, index) => (
-                <div className={module.postItem} key={index}>
-                    {loading ? (
-                        <Post />
-                    ) : obj ? (
-                        <Post
-                            key={obj._id}
-                            post={obj}
-                            userData={userData?._id === obj.user._id}
-                        />
-                    ) : null}
-                </div>
-            ))}
+        <div className={module.container}>
+            <h2 className={module.header}>Posts</h2>
+            <div className={module.postList}>
+                {(loading ? [...Array(5)] : Array.isArray(posts) ? posts : []).map((obj, index) => (
+                    <div className={module.postItem} key={index}>
+                        {loading ? (
+                            <Post />
+                        ) : obj ? (
+                            <Post
+                                key={obj._id}
+                                post={obj}
+                                userData={userData?._id === obj.user._id}
+                            />
+                        ) : null}
+                    </div>
+                ))}
+            </div>
+
         </div>
     );
 

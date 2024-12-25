@@ -7,6 +7,7 @@ const postSchema = new Schema(
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     viewsCount: { type: Number, default: 0 },
     files: { type: [String], default: [] },
+    imageUrl: { type: String, default: '' },
   },
   {
     timestamps: true,

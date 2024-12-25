@@ -1,9 +1,17 @@
 .linkDiv {
   display: flex;
   gap: 20px;
+}
+
+.link {
   color: black;
   font-size: 30px;
   font-weight: 700;
+  transition: color 0.5s;
+}
+
+.link:hover {
+  color: #0003a5;
 }
 
 .active {

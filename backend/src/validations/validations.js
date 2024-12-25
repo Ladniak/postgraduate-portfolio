@@ -1,26 +1,5 @@
 import { body } from 'express-validator';
 
-// import multer from 'multer';
-
-// const storage = multer.memoryStorage();
-// export const upload = multer({
-//   storage,
-//   limits: { fileSize: 10 * 1024 * 1024 },
-//   fileFilter: (req, file, cb) => {
-//     const allowedMimeTypes = [
-//       'application/msword',
-//       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-//       'application/pdf',
-//     ];
-
-//     if (allowedMimeTypes.includes(file.mimetype)) {
-//       cb(null, true);
-//     } else {
-//       cb(new Error('Тільки файли формату DOC, DOCX або PDF дозволені.'));
-//     }
-//   },
-// });
-
 export const registerValidation = [
   body('email').isEmail().withMessage('Invalid email format'),
   body('password')
@@ -50,17 +29,4 @@ export const postCreateValidation = [
     .isLength({ min: 10 })
     .isString(),
   body('imageUrl', 'Invalid link').optional().isString(),
-
-  // (req, res, next) => {
-  //   if (!req.file) {
-  //     return res.status(400).json({ error: 'Файл обов’язковий для завантаження.' });
-  //   }
-
-  //   // Додаткові перевірки (наприклад, розмір)
-  //   if (req.file.size > 10 * 1024 * 1024) {
-  //     return res.status(400).json({ error: 'Файл перевищує допустимий розмір 10MB.' });
-  //   }
-
-  //   next();
-  // }
 ];

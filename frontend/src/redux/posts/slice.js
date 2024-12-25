@@ -29,7 +29,6 @@ const postsSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Обробка fetchPostById
       .addCase(fetchPostById.pending, (state) => {
         state.post = null;
         state.loading = true;

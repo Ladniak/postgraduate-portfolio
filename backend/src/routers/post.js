@@ -1,5 +1,6 @@
 import express from 'express';
 import multer from 'multer';
+import fs from 'fs';
 import * as postControllers from '../controllers/post.js';
 import { postCreateValidation } from '../validations/validations.js';
 import checkAuth from '../utils/checkAuth.js';
@@ -9,17 +10,17 @@ const postsRouter = express.Router();
 
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
-    cb(null, 'uploads/');
+    if (!fs.existsSync('uploads')) {
+      fs.mkdirSync('uploads');
+    }
+    cb(null, 'uploads');
   },
   filename: (_, file, cb) => {
     cb(null, file.originalname);
   },
 });
 
-const upload = multer({
-  storage,
-  limits: { fileSize: 1024 * 1024 * 10 },
-});
+const upload = multer({ storage });
 
 postsRouter.post('/upload', checkAuth, upload.single('image'), (req, res) => {
   res.json({

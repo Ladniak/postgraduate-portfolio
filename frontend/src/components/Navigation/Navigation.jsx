@@ -8,11 +8,15 @@ const buildCssClasses = ({ isActive }) => clsx(module.link, isActive && module.a
 
 export const Navigation = () => {
     const isLoggedIn = useSelector(selectIsAuth);
+
     return (
         <div className={module.navigation}>
             <NavLink className={buildCssClasses} to="/">Portfolio</NavLink>
             {isLoggedIn && (
-                <NavLink className={buildCssClasses} to="/contacts">Contacts</NavLink>
+                <NavLink className={buildCssClasses} to="/new-post">Add Post</NavLink>
+            )}
+            {isLoggedIn && (
+                <NavLink className={buildCssClasses} to="/my-posts">My Posts</NavLink>
             )}
         </div>
     );

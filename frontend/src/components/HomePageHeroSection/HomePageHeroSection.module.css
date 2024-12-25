@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Додає статичність фону */
+  background-attachment: fixed;
   margin: 0;
   padding: 0 65px;
   height: 40vw;
@@ -36,6 +36,7 @@
   border: none;
   background: #000266;
   color: white;
+  transition: 0.5s;
 }
 
 .btn:hover {

@@ -1,6 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { authInstance } from "../posts/operations";
+
+const authInstance = axios.create({
+  baseURL: "http://localhost:3000",
+});
 
 authInstance.interceptors.request.use((config) => {
   config.headers.Authorization = window.localStorage.getItem("token");
