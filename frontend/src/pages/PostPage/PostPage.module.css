@@ -1,14 +1,102 @@
 .container {
-  padding-top: 30px;
   padding-left: 35px;
   display: flex;
   gap: 15px;
+  min-height: 100vh;
+  background: #0063e463;
+}
+
+.firstContent {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  max-height: max-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.infoDiv {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 5px;
+}
+
+.contentDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background: white;
+  width: 60%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .title {
   margin-bottom: 40px;
+  color: #0063e463;
 }
 
 .image {
   width: 400px;
+  display: block;
+}
+
+.deleteButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff0000c0;
+  border: none;
+  color: black;
+  padding: 8px 9px;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.updateButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffb00d2;
+  border: none;
+  color: black;
+  padding: 8px 9px;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  background: white;
+}
+
+.updateButton:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  transform: translateY(-1px);
+}
+
+.deleteButton:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  transform: translateY(-1px);
+}
+
+.updateButton:active {
+  background-color: #fffb009d;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.deleteButton:active {
+  background-color: #ff000091;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchPosts, fetchPostById } from "./operations";
+import { fetchPosts, fetchPostById, fetchRemove } from "./operations";
 
 const INITIAL_STATE = {
   items: [],
@@ -41,6 +41,22 @@ const postsSlice = createSlice({
       })
       .addCase(fetchPostById.rejected, (state, action) => {
         state.post = null;
+        state.loading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(fetchRemove.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchRemove.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items = state.items.filter(
+          (post) => post._id !== action.payload._id
+        );
+      })
+      .addCase(fetchRemove.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });

@@ -2,18 +2,21 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
 }
 
 .postList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
   gap: 20px;
   padding: 0 15px;
+  justify-items: center; /* вирівнювання елементів по центру */
 }
 
 .postItem {
   box-sizing: border-box;
   margin-bottom: 20px;
+  width: 100%; /* це забезпечить, щоб пости не виходили за межі контейнера */
 }
 
 .header {
@@ -22,4 +25,17 @@
   color: rgb(77, 77, 77);
   font-size: 40px;
   font-weight: 700;
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 1024px) {
+  .postList {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки для середніх екранів */
+  }
+}
+
+@media (max-width: 768px) {
+  .postList {
+    grid-template-columns: 1fr; /* 1 колонка для маленьких екранів */
+  }
 }

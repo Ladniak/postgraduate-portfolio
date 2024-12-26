@@ -23,3 +23,13 @@ export const fetchPostById = createAsyncThunk("posts/fetchById", async (id) => {
     throw new Error("Failed to fetch post");
   }
 });
+
+export const fetchRemove = createAsyncThunk("posts/fetchRemove", async (id) => {
+  try {
+    const { data } = await authInstance.delete(`/posts/${id}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to remove post");
+  }
+});

@@ -11,6 +11,7 @@ import { Suspense, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchAuthMe } from './redux/users/operations'
 import { Route, Routes } from 'react-router-dom'
+import EditPostPage from './pages/EditPostPage/EditPostPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
           <Route path="/new-post" element={<AddPostPage />} />
           <Route path="/my-posts" element={<AddPostPage />} />
           <Route path="/posts/:id" element={<PostPage />} />
+          <Route path="/posts/:id/edit" element={<EditPostPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

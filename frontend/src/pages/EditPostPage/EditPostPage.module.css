@@ -1,0 +1,106 @@
+.formDiv {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.addPostForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 20px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 350px;
+  height: auto;
+  min-height: 450px;
+}
+
+.formHeader {
+  font-weight: 400;
+  font-size: 35px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.inputField,
+.textareaField {
+  width: 330px;
+  padding: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: rgb(211, 219, 226);
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.textareaField {
+  height: 80px;
+  resize: none;
+  border-bottom: 2px solid rgb(211, 219, 226);
+}
+
+.fileButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s;
+  width: 120px;
+  height: 30px;
+}
+
+.formButton {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: none;
+  background: #000266;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.formButton:hover {
+  background: #000399;
+}
+
+.fileButton:hover {
+  color: #2e4cdb;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.hiddenInput {
+  display: none;
+}

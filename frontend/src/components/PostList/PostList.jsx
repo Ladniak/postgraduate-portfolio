@@ -1,21 +1,29 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { fetchPosts } from "../../redux/posts/operations";
+import { useEffect, useState } from "react";
+import { fetchPosts, fetchRemove } from "../../redux/posts/operations";
 import Post from "../Post/Post";
 import module from "./PostList.module.css"
 
 const PostList = () => {
     const dispatch = useDispatch();
     const { items: posts, loading, error } = useSelector((state) => state.posts);
+    const [refetch, setRefetch] = useState(false);
     const userData = useSelector((state) => state.auth.data);
-
 
     useEffect(() => {
         dispatch(fetchPosts());
-    }, [dispatch]);
+    }, [dispatch, refetch]);
+
+    const handleDeletePost = (id) => {
+        dispatch(fetchRemove(id)).then(() => {
+            setRefetch(prev => !prev);
+        });
+    };
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
+
+    const userId = userData?.user?._id;
 
     return (
         <div className={module.container}>
@@ -29,15 +37,16 @@ const PostList = () => {
                             <Post
                                 key={obj._id}
                                 post={obj}
-                                userData={userData?._id === obj.user._id}
+                                userData={userId === obj.user._id}
+                                onDelete={handleDeletePost}
                             />
                         ) : null}
                     </div>
                 ))}
             </div>
-
         </div>
     );
+
 
 };
 
