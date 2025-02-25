@@ -8,5 +8,4 @@
 - **Backend**: Node.js, Express, MongoDB  
 - **Аутентифікація**: JSON Web Token (JWT), bcrypt  
 - **Збереження даних**: MongoDB Atlas  
-- **Хостинг**: (вкажіть, якщо вже є розгорнута версія)  
 
